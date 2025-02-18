@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CoverLetterGenerator from "../_components/cover-letter-generator";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 export default function NewCoverLetterPage() {
   return (
@@ -15,8 +16,9 @@ export default function NewCoverLetterPage() {
         </Link>
 
         <div className="pb-6">
-          <h1 className="text-6xl font-bold gradient-title">
-            Create Cover Letter
+          <h1 className="text-6xl font-bold ">
+          <AuroraText> Create Cover Letter</AuroraText>
+           
           </h1>
           <p className="text-muted-foreground">
             Generate a tailored cover letter for your job application
