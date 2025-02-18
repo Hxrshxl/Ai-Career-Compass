@@ -138,7 +138,7 @@ const HeroSection = () => {
       {/* Hero Section */}
       <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 sm:px-6 lg:px-8">
         <DotPattern className={cn("[mask-image:radial-gradient(450px_circle_at_center,white,transparent)]")} />
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter text-center">
+        <h1 className="sm:text-4xl md:text-7xl lg:text-9xl  font-bold tracking-tighter text-center">
           <AuroraText>AI Career Compass</AuroraText>
         </h1>
         <TypingAnimation className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 text-center">
@@ -152,34 +152,34 @@ const HeroSection = () => {
       <BackgroundLines />
 
       {/* Feature Section */}
-      <div className="py-16 sm:py-24 bg-white dark:bg-transparent dark:bg-grid-white/[0.05] mt-[-650px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <WordRotate
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-black dark:text-white text-center mb-12"
-            words={["Features", "Features"]}
-          />
-          <div className="flex gap-8 ">
-            {features.map((feature, index) => {
-              const Icon = feature.icon
-              return (
-                <MagicCard
-                  key={index}
-                  className="flex items-center justify-center h-[300px] w-[400px] p-6 text-center"
-                  gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-                >
-                  <div className="flex items-center justify-center mb-4">
-                    <Icon className="w-8 h-8" />
-                  </div>
-                  <h2 className="text-xl font-bold mb-2">{feature.title}</h2>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">{feature.description}</p>
-                </MagicCard>
-              )
-            })}
+        <div className="py-16 sm:py-24 bg-white dark:bg-transparent dark:bg-grid-white/[0.05] mt-[-650px]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <WordRotate
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-black dark:text-white text-center mb-12"
+          words={["Features", "Features"]}
+            />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => {
+            const Icon = feature.icon
+            return (
+              <MagicCard
+            key={index}
+            className="flex flex-col items-center justify-center h-[300px] p-6 text-center"
+            gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
+              >
+            <div className="flex items-center justify-center mb-4">
+              <Icon className="w-8 h-8" />
+            </div>
+            <h2 className="text-xl font-bold mb-2">{feature.title}</h2>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{feature.description}</p>
+              </MagicCard>
+            )
+          })}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Testimonials */}
+        {/* Testimonials */}
       <div className="py-16 sm:py-24 bg-white dark:bg-black dark:bg-grid-white/[0.05] ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <WordRotate
