@@ -1,64 +1,60 @@
-"use client";
+"use client"
 
-import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { DotPattern } from "./magicui/dot-pattern";
-import { AuroraText } from "./magicui/aurora-text";
-import { TypingAnimation } from "./magicui/typing-animation";
-import { RainbowButton } from "./magicui/rainbow-button";
-import { BackgroundLines } from "./ui/background-lines";
-import { AnimatePresence, motion } from "framer-motion";
-import { Plus } from "lucide-react";
-import { MagicCard } from "./magicui/magic-card";
-import { useTheme } from "next-themes";
-import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
-import { LineShadowText } from "./magicui/line-shadow-text";
-import { WordRotate } from "./magicui/word-rotate";
-import { FileText, PencilLine, GraduationCap, Grid } from "lucide-react";
+import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { DotPattern } from "./magicui/dot-pattern"
+import { AuroraText } from "./magicui/aurora-text"
+import { TypingAnimation } from "./magicui/typing-animation"
+import { RainbowButton } from "./magicui/rainbow-button"
+import { BackgroundLines } from "./ui/background-lines"
+import { AnimatePresence, motion } from "framer-motion"
+import { Plus } from "lucide-react"
+import { MagicCard } from "./magicui/magic-card"
+import { useTheme } from "next-themes"
+import { InfiniteMovingCards } from "./ui/infinite-moving-cards"
+import { WordRotate } from "./magicui/word-rotate"
+import { FileText, PencilLine, GraduationCap, Grid } from "lucide-react"
 
 const features = [
   {
     title: "Build Resume",
     description: "Create a professional resume with ATS-friendly formatting to stand out in job applications.",
-    icon: FileText
+    icon: FileText,
   },
   {
     title: "Cover Letter",
     description: "Craft compelling cover letters that highlight skills, achievements, and career goals effectively.",
-    icon: PencilLine
+    icon: PencilLine,
   },
   {
     title: "Interview Prep",
     description: "Prepare for job interviews with mock sessions, common questions, and expert tips.",
-    icon: GraduationCap
+    icon: GraduationCap,
   },
   {
     title: "Industry Insights",
     description: "Stay updated with the latest industry trends, skills, and career opportunities.",
-    icon: Grid
+    icon: Grid,
   },
-];
-
+]
 
 const testimonials = [
   {
     quote:
-      "This AI Career Coach transformed the way I approached my job search. The personalized guidance helped me land my dream role in tech!",
+      "This AI Career Compass transformed the way I approached my job search. The personalized guidance helped me land my dream role in tech!",
     name: "Sarah Johnson",
     title: "Software Engineer at Google",
   },
   {
     quote:
-      "The AI-driven resume and interview tips gave me the confidence to apply for roles I never thought I’d qualify for. Now, I’m a Data Scientist at Microsoft!",
+      "The AI-driven resume and interview tips gave me the confidence to apply for roles I never thought I'd qualify for. Now, I'm a Data Scientist at Microsoft!",
     name: "James Patel",
     title: "Data Scientist at Microsoft",
   },
   {
     quote:
-      "I was stuck in my career, but the AI Career Coach provided me with a structured roadmap to upskill and switch from marketing to UX design.",
+      "I was stuck in my career, but the AI Career Compass provided me with a structured roadmap to upskill and switch from marketing to UX design.",
     name: "Emily Carter",
     title: "UX Designer at Adobe",
   },
@@ -70,12 +66,11 @@ const testimonials = [
   },
   {
     quote:
-      "AI Career Coach is like having a personal mentor available 24/7. The job recommendations and skill-building advice are spot on!",
+      "AI Career Compass is like having a personal mentor available 24/7. The job recommendations and skill-building advice are spot on!",
     name: "Sophia Lee",
     title: "AI Researcher at OpenAI",
   },
-];
-
+]
 
 const tabs = [
   {
@@ -113,103 +108,110 @@ const tabs = [
     description:
       "Follow tech blogs, enroll in online courses, attend webinars, and participate in tech meetups and AI research discussions.",
   },
-];
-
+]
 
 const HeroSection = () => {
-  const imageRef = useRef(null);
-  const { theme } = useTheme();
-  const [activeIndex, setActiveIndex] = useState(null);
+  const imageRef = useRef(null)
+  const { theme } = useTheme()
+  const [activeIndex, setActiveIndex] = useState(null)
 
   useEffect(() => {
-    if (!imageRef.current) return;
+    if (!imageRef.current) return
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const scrollThreshold = 100;
+      const scrollPosition = window.scrollY
+      const scrollThreshold = 100
 
       if (scrollPosition > scrollThreshold) {
-        imageRef.current.classList.add("scrolled");
+        imageRef.current.classList.add("scrolled")
       } else {
-        imageRef.current.classList.remove("scrolled");
+        imageRef.current.classList.remove("scrolled")
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <>
       {/* Hero Section */}
-      <div className="flex min-h-screen w-full flex-col items-center justify-center  bg-black">
+      <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 sm:px-6 lg:px-8">
         <DotPattern className={cn("[mask-image:radial-gradient(450px_circle_at_center,white,transparent)]")} />
-        <h1 className="text-6xl font-bold tracking-tighter md:text-8xl lg:text-9xl mt-[-100px]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter text-center">
           <AuroraText>AI Career Compass</AuroraText>
         </h1>
-        <TypingAnimation> Navigating Your Future with Precision and Insight </TypingAnimation>
+        <TypingAnimation className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 text-center">
+          Navigating Your Future with Precision and Insight
+        </TypingAnimation>
         <Link href="/onboarding">
-          <RainbowButton className="mt-[50px]">Get Started</RainbowButton>
+          <RainbowButton className="mt-8 sm:mt-12">Get Started</RainbowButton>
         </Link>
       </div>
 
       <BackgroundLines />
 
       {/* Feature Section */}
-      <div className="h-[40rem] mt-[-920px] rounded-md flex flex-col antialiased bg-white dark:bg-transparent dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-        <WordRotate className="text-6xl font-bold text-black dark:text-white" words={["Features", "Features"]} />
-      </div>
-
-      <div className="mt-[-150px] h-screen">
-        <div className="flex mx-9 gap-7 lg:h-[250px] justify-center items-center">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <MagicCard
-              key={index}
-              className="cursor-pointer flex-col items-center justify-center h-[350px] w-[500px] text-center text-4xl p-6"
-              gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-              >
-              <div className="flex items-center justify-center ">
-                <Icon className="w-10 h-10 mb-3" />
-              </div>
-              <h2 className="font-bold mb-5">{feature.title}</h2>
-              <p className="text-xl text-gray-300">{feature.description}</p>
-              </MagicCard>
-            );
-          })}
+      <div className="py-16 sm:py-24 bg-white dark:bg-transparent dark:bg-grid-white/[0.05] mt-[-650px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <WordRotate
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-black dark:text-white text-center mb-12"
+            words={["Features", "Features"]}
+          />
+          <div className="flex gap-8 ">
+            {features.map((feature, index) => {
+              const Icon = feature.icon
+              return (
+                <MagicCard
+                  key={index}
+                  className="flex items-center justify-center h-[300px] w-[400px] p-6 text-center"
+                  gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
+                >
+                  <div className="flex items-center justify-center mb-4">
+                    <Icon className="w-8 h-8" />
+                  </div>
+                  <h2 className="text-xl font-bold mb-2">{feature.title}</h2>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{feature.description}</p>
+                </MagicCard>
+              )
+            })}
+          </div>
         </div>
       </div>
 
-
       {/* Testimonials */}
-      <div className="h-[40rem] mt-[-450px] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-        <WordRotate className="text-6xl font-bold text-black dark:text-white mb-7" words={["Testimonials", "Testimonials"]} />
-        <InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
+      <div className="py-16 sm:py-24 bg-white dark:bg-black dark:bg-grid-white/[0.05] ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <WordRotate
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-black dark:text-white text-center mb-12"
+            words={["Testimonials", "Testimonials"]}
+          />
+          <InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
+        </div>
       </div>
 
       {/* FAQ Section */}
-      <div className=" mx-auto pb-10 pt-2">
-        <h1 className="uppercase text-center text-4xl font-bold pt-2 pb-4">FAQ</h1>
-        <div className="h-fit border rounded-lg p-2 dark:bg-[#000000] bg-[#F2F2F2]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8">FAQ</h1>
+        <div className="space-y-4">
           {tabs.map((tab, index) => (
-            <motion.div key={index} className={`overflow-hidden ${index !== tabs.length - 1 ? "border-b" : ""}`}>
+            <motion.div key={index} className="border rounded-lg overflow-hidden">
               <button
-                className="p-3 px-2 w-full cursor-pointer sm:text-base text-xs items-center transition-all font-semibold dark:text-white text-black flex gap-2"
+                className="p-4 w-full text-left font-semibold flex items-center justify-between focus:outline-none"
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
               >
-                <Plus className={`transition-transform ease-in-out w-5 h-5 dark:text-gray-200 text-gray-600 ${activeIndex === index ? "rotate-45" : "rotate-0"}`} />
-                {tab.title}
+                <span className="pr-2">{tab.title}</span>
+                <Plus className={`transition-transform ${activeIndex === index ? "rotate-45" : "rotate-0"}`} />
               </button>
-              <AnimatePresence mode="sync">
+              <AnimatePresence>
                 {activeIndex === index && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut", delay: 0.14 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <p className="dark:text-white text-black p-3 xl:text-base sm:text-sm text-xs pt-0 w-[90%]">{tab.description}</p>
+                    <p className="p-4 text-sm sm:text-base">{tab.description}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -218,7 +220,8 @@ const HeroSection = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection
+
