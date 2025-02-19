@@ -135,49 +135,50 @@ const HeroSection = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 sm:px-6 lg:px-8">
-        <DotPattern className={cn("[mask-image:radial-gradient(450px_circle_at_center,white,transparent)]")} />
-        <h1 className="sm:text-4xl md:text-7xl lg:text-9xl  font-bold tracking-tighter text-center">
-          <AuroraText>AI Career Compass</AuroraText>
-        </h1>
-        <TypingAnimation className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 text-center">
-          Navigating Your Future with Precision and Insight
-        </TypingAnimation>
-        <Link href="/onboarding">
-          <RainbowButton className="mt-8 sm:mt-12">Get Started</RainbowButton>
-        </Link>
-      </div>
+      <div className="flex flex-col items-center justify-center min-h-screen w-full bg-black px-4 sm:px-6 lg:px-8">
+  <DotPattern className={cn("[mask-image:radial-gradient(450px_circle_at_center,white,transparent)]")} />
+  
+  <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-center leading-tight">
+    <AuroraText>AI Career Compass</AuroraText>
+  </h1>
+  
+  <TypingAnimation className="text-base sm:text-lg md:text-xl lg:text-3xl mt-4 text-center leading-relaxed">
+    Navigating Your Future with Precision and Insight
+  </TypingAnimation>
+  
+  <Link href="/onboarding">
+    <RainbowButton className="mt-6 sm:mt-10 md:mt-12 lg:mt-16">Get Started</RainbowButton>
+  </Link>
+</div>
 
-      <BackgroundLines />
 
-      {/* Feature Section */}
-        <div className="py-16 sm:py-24 bg-white dark:bg-transparent dark:bg-grid-white/[0.05] mt-[-650px]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <WordRotate
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-black dark:text-white text-center mb-12"
-          words={["Features", "Features"]}
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => {
-            const Icon = feature.icon
-            return (
-              <MagicCard
+<div className="py-16 sm:py-24 bg-white dark:bg-transparent dark:bg-grid-white/[0.05] mt-16 sm:mt-24 md:mt-32 lg:mt-40">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <WordRotate
+      className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white text-center mb-12"
+      words={["Features", "Features"]}
+    />
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {features.map((feature, index) => {
+        const Icon = feature.icon;
+        return (
+          <MagicCard
             key={index}
-            className="flex flex-col items-center justify-center h-[300px] p-6 text-center"
+            className="flex flex-col items-center justify-center h-[280px] sm:h-[300px] p-6 text-center"
             gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-              >
+          >
             <div className="flex items-center justify-center mb-4">
-              <Icon className="w-8 h-8" />
+              <Icon className="w-10 h-10 sm:w-12 sm:h-12" />
             </div>
-            <h2 className="text-xl font-bold mb-2">{feature.title}</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{feature.description}</p>
-              </MagicCard>
-            )
-          })}
-            </div>
-          </div>
-        </div>
+            <h2 className="text-lg sm:text-xl font-bold mb-2">{feature.title}</h2>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{feature.description}</p>
+          </MagicCard>
+        );
+      })}
+    </div>
+  </div>
+</div>
+
 
         {/* Testimonials */}
       <div className="py-16 sm:py-24 bg-white dark:bg-black dark:bg-grid-white/[0.05] ">
