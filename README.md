@@ -40,7 +40,7 @@ AI Career Compass is an **AI-driven career coach** designed to take your **job a
 
 Clone the repository and navigate to the project directory:  
 ```sh
-git clone https://github.com/your-username/ai-career-compass.git
+git clone https://github.com/Hxrshxl/ai-career-compass.git
 cd ai-career-compass
 ```
 
