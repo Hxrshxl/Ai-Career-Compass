@@ -1,6 +1,6 @@
 # 🚀 AI Career Compass – Your AI-Powered Career Coach 🎯  
 
-![Banner](./Banner.png)  
+![Banner](/public/Banner.png)  
 
 AI Career Compass is an **AI-driven career coach** designed to take your **job application process to the next level**. From **industry insights** to **AI-powered resume building, interview preparation, and personalized career guidance**, this full-stack application has everything you need to **land your dream job**.  
 
