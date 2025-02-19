@@ -135,6 +135,8 @@ const HeroSection = () => {
 
   return (
     <>
+
+     <BackgroundLines className="flex items-center justify-center w-full flex-col px-4">
       <div className="flex flex-col items-center justify-center min-h-screen w-full bg-black px-4 sm:px-6 lg:px-8">
   <DotPattern className={cn("[mask-image:radial-gradient(450px_circle_at_center,white,transparent)]")} />
   
@@ -150,6 +152,8 @@ const HeroSection = () => {
     <RainbowButton className="mt-6 sm:mt-10 md:mt-12 lg:mt-16">Get Started</RainbowButton>
   </Link>
 </div>
+
+</BackgroundLines>
 
 
 <div className="py-16 sm:py-24 bg-white dark:bg-transparent dark:bg-grid-white/[0.05] mt-16 sm:mt-24 md:mt-32 lg:mt-40">
