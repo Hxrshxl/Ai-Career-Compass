@@ -27,11 +27,6 @@ AI Career Compass is an **AI-driven career coach** designed to take your **job a
 
 ---
 
-## 🎥 Demo  
-🚀 **Coming Soon!** Stay tuned for a complete walkthrough video.  
-
----
-
 ## 📸 Screenshots  
 🔹 Landing Page with **smooth scroll animations**  
 🔹 AI-Powered Resume Builder with **real-time suggestions**  
@@ -47,4 +42,19 @@ AI Career Compass is an **AI-driven career coach** designed to take your **job a
 ```sh
 git clone https://github.com/your-username/ai-career-compass.git
 cd ai-career-compass
+
+2️⃣ Install Dependencies
+sh
+Copy
+Edit
+npm install
+3️⃣ Set Up Environment Variables
+Create a .env file and add the required API keys and configurations.
+
+4️⃣ Run the Development Server
+sh
+Copy
+Edit
+npm run dev
+Open http://localhost:3000 in your browser. 🚀
 
