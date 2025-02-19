@@ -38,23 +38,26 @@ AI Career Compass is an **AI-driven career coach** designed to take your **job a
 
 ## 📌 Installation  
 
-### 1️⃣ Clone the Repository  
+Clone the repository and navigate to the project directory:  
 ```sh
 git clone https://github.com/your-username/ai-career-compass.git
 cd ai-career-compass
+```
 
 2️⃣ Install Dependencies
-sh
-Copy
-Edit
+
+```sh
 npm install
+
+```
+
+
 3️⃣ Set Up Environment Variables
 Create a .env file and add the required API keys and configurations.
 
+
 4️⃣ Run the Development Server
-sh
-Copy
-Edit
+```sh
 npm run dev
-Open http://localhost:3000 in your browser. 🚀
+```
 
