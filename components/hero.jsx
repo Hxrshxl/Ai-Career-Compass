@@ -145,7 +145,7 @@ const HeroSection = () => {
   </h1>
   
   <TypingAnimation className="text-base sm:text-lg md:text-xl lg:text-3xl mt-4 text-center leading-relaxed">
-    Navigating Your Future with Precision and Insight
+    Your Smartest Path to Career Success!
   </TypingAnimation>
   
   <Link href="/onboarding">
